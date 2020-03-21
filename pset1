@@ -1,0 +1,38 @@
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    //Get user input
+    int user_input;
+    do
+    {
+        user_input = get_int("Height: ");
+    }
+    while (user_input < 1 || user_input > 8);
+
+    //Row loop
+    for (int row = 0; row < user_input; row++)
+    {
+        // Spaces
+        for (int spaces = user_input-row-1; spaces > 0; spaces--)
+        {
+            printf(" ");
+        }
+        // Hashes
+        for (int hashes = 0; hashes <= row; hashes++)
+        {
+            printf("#");
+        }
+        // print spaces
+        {
+            printf("  ");
+        }
+        //Print right hash
+        for (int hashes = 0; hashes <= row; hashes++)
+            {
+                printf("#");
+            }
+        printf("\n");
+    }
+}
