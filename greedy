@@ -1,0 +1,44 @@
+#include <cs50.h>
+#include <stdio.h>
+#include <math.h>
+
+int main(void)
+// Get user input
+{ 
+    int coins = 0;
+    float f;
+    do
+    {
+        f = get_float("Change due: ");
+    }
+    while (f<0);
+//Turn into integer *100
+    int change = round(f*100);
+
+    //quarters
+        while (change>=25)
+        {
+        coins++;
+        change-=25;
+        }
+    //dime
+        while(change>=10)
+        {
+        coins++;
+        change-=10;
+        }
+    //nickels
+        while(change>=5)
+        {
+        coins++;
+        change-=5;
+        }
+    //pennies
+        while(change>=1)
+        {
+        coins++;
+        change-=1;
+        }
+    //show number of 
+    printf("%i\n", coins);
+}
